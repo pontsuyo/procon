@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"path": "atCoder"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"files.associations": {
+			"vector": "cpp",
+			"ostream": "cpp",
+			"__config": "cpp",
+			"__nullptr": "cpp",
+			"cstddef": "cpp",
+			"exception": "cpp",
+			"initializer_list": "cpp",
+			"new": "cpp",
+			"stdexcept": "cpp",
+			"type_traits": "cpp",
+			"typeinfo": "cpp",
+			"algorithm": "cpp",
+			"cfenv": "cpp",
+			"charconv": "cpp",
+			"cuchar": "cpp",
+			"queue": "cpp",
+			"__split_buffer": "cpp",
+			"deque": "cpp",
+			"list": "cpp",
+			"valarray": "cpp",
+			"random": "cpp",
+			"iostream": "cpp",
+			"string": "cpp",
+			"string_view": "cpp"
+		}
+	}
+}
