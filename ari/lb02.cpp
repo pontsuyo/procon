@@ -24,9 +24,7 @@ bool C (int d){
 
 void solve(){
     sort(x, x+N);
-
     int lb = 0, ub = INF;
-
     while (ub - lb > 1){
         int mid = (lb + ub)/2;
         if (C(mid)) lb = mid;
