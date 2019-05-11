@@ -29,7 +29,8 @@ int sum[MAX_N + 1];
 void solve(){
     int res = n+1;
     int s=0, t=0, sum=0;
-    for(;;){
+    // for(;;){
+    while(true){
         while(t<n && sum<S){
             sum += a[t++];
         }
