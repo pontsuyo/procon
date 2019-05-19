@@ -4,30 +4,26 @@ typedef long long ll;
 #define rep(i,n) for(int i=0;i<n;i++)
 
 int main(){
-    int n;
-    cin >> n;
-    vector <char> c(n);
-    for(int i=0;i<n;i++){
-        cin >> c[i];
-    }
-
-    vector <char> out;
-    int i=1;
-    int cnt = 0;
-    while(i<n){
-        if(c[i]!=c[i-1]){
-            out.emplace_back(c[i-1]);
-            out.emplace_back(c[i]);
-            i += 2;
-            cnt+=2;
-        }else{
-            i++;
+    int t; cin >> t;
+    rep(i, t){
+        int n; cin >> n;
+        vector <ll> a, b;
+        rep(j, n){
+            ll c;
+            cin >> c;
+            a.push_back(c); 
         }
+        sort(a.begin(), a.end());
+        ll x = a[0]*a[n-1];
+        for(ll j=2;j<=sqrt(x);j++){
+            if(x%j==0){
+                b.push_back(j);
+                if(x/j != j) b.push_back(x/j);
+            }
+        }
+        sort(b.begin(), b.end());
+        if(a==b) cout << x << endl;
+        else cout << -1 << endl;
     }
-    cout << n-cnt << endl;
-    for(int j=0;j<out.size();j++){
-        cout << out[j];
-    }
-    cout << endl;
-
+    return 0;
 }
