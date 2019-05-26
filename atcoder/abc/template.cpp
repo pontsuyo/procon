@@ -5,8 +5,8 @@ typedef pair<int, int> P;
 #define rep(i,n) for(int i=0;i<n;i++)
 
 int main(){
-    int N;
-    cin >> N;
+    int n;
+    cin >> n;
     printf("%d\n", n);
     return 0;
 }
