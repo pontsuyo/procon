@@ -16,10 +16,6 @@ int main(){
         cin >> d[i];
     }
 
-
-    
-
-
     rep(i, q){
         int s_[n], t_[n];
         rep(j, n){
