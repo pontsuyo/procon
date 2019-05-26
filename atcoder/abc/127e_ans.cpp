@@ -3,8 +3,8 @@
 using namespace std;
 typedef long long LL;
 const int mod=1000000007;
-int mul(int x,int k)
-{
+
+int mul(int x,int k){
 	LL ans=1,mid=x;
 	while(k)
 	{
@@ -14,6 +14,7 @@ int mul(int x,int k)
 	}
 	return ans;
 }
+
 int main()
 {
 	int N,M,K;
