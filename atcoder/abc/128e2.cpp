@@ -16,17 +16,13 @@ int main(){
         cin >> d[i];
     }
 
-
-    
-
+    int s_[n], t_[n];
+    rep(j, n){
+        s_[j] = s[j]-x[j];
+        t_[j] = t[j]-x[j];
+    }
 
     rep(i, q){
-        int s_[n], t_[n];
-        rep(j, n){
-            s_[j] = s[j]-d[i];
-            t_[j] = t[j]-d[i];
-        }
-        
         int dis = 1000000001;
         int tmp = 1000000001;
         bool f = true;
@@ -39,7 +35,7 @@ int main(){
         if(f){
             dis = -1;
         }
-        printf("%d\n", dis);
+        printf("%d\n", dis);       
     }
     return 0;
 }

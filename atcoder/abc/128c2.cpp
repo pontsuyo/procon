@@ -7,11 +7,17 @@ typedef pair<int, int> P;
 int main(){
     int n, m;
     cin >> n >> m;
-    int k[m], s[10][10];
+    int k;
+    vector <int> a(n);
+
     rep(i, m){
-        cin >> k[i];
-        rep(j, k[i]){
-            cin >> s[i][j];
+        cin >> k;
+        rep(j, k){
+            int s;
+            cin >> s;
+            s--;
+            a[s] |= 1<<
+            
         }
     }
     int p[m];
