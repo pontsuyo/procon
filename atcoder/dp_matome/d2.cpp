@@ -21,6 +21,9 @@ int main(){
             dp[0][j] = (ll) 0;
         }
     }
+    // rep(j, W+1){
+    //     printf("%d\n", dp[0][j]);
+    // }
 
     for(int i=1;i<N;i++){
         rep(j, W+1){
@@ -31,6 +34,13 @@ int main(){
             }
         }
     }
+
+    // rep(i, N){
+    //     rep(j, W+1){
+    //         cout << dp[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
     printf("%lld\n", dp[N-1][W]);
     return 0;
