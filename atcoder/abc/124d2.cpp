@@ -16,30 +16,40 @@ void solve(){
             a.emplace_back(make_pair(i, S[i]));
         }
     }
-    a.emplace_back(make_pair(N, S[N-1]));
+    int n = a.size();
+    a.emplace_back(make_pair(N, '1'));
+    a.emplace_back(make_pair(N, '1'));
 
-    while(a.size()<3*K+1){
-        a.emplace_back(make_pair(N, S[N-1]));
+    int l, r;
+    l = 0;
+
+    if(S[0]=='0'){
+        r = min(2*K-1, n);
+    }else{
+        r = min(2*K, n);
     }
-
+    
     int MAX = 0;
-    rep(i, max(a.size()-2*K, K)){
-        if(a[i].second=='0'){
-            MAX = max(MAX, a[i+2*K].first - a[i].first);
-        }else if(a[i].second=='1'){
-            MAX = max(MAX, a[i+2*K+1].first - a[i].first);
+    int i= 0;
+    while(true){
+        if(a[l].first >= n){
+            break;
+        }
+        MAX = max(MAX, a[r+1].first - a[l].first);
+
+        if(a[l].second=='0'){
+            l++;
+            r = min(r+2, n);
+        }else{
+            l++;
         }
     }
-    printf("%d\n", MAX);
+    printf("%d\n",MAX);
 }
 
 int main(){
     cin >> N >> K;
     cin >> S;    
     solve();
-    // printf("%d\n", a.size());
-    // rep(i, a.size()){
-    //     printf("%d\n", a[i].first);
-    // }
     return 0;
 }
