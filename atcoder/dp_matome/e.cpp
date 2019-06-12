@@ -7,31 +7,44 @@ typedef pair<int, int> P;
 int main(){
     int N, W;
     cin >> N >> W;
-    int w[N], v[N];
-    rep(i ,N){
+    ll w[N], v[N];
+
+    int V=0;
+    rep(i, N){
         cin >> w[i] >> v[i];
+        V += v[i];
     }
 
-    ll dp[N][W+1];
+    int INF = 1000000005;
+    V += 5;
 
-    rep(j, W+1){
-        if(j>=w[0]){
-            dp[0][j] = (ll) v[0];
-        }else{
-            dp[0][j] = (ll) 0;
-        }
-    }
+    ll dp[N+1][V] = {};
 
-    for(int i=1;i<N;i++){
-        rep(j, W+1){
-            if(j-w[i]>=0){
-                dp[i][j] = max(dp[i-1][j-w[i]] + v[i], dp[i-1][j]);
-            }else{
-                dp[i][j] = dp[i-1][j];
+    int sumV = 0;
+    rep(i, N){
+        sumV += v[i];
+        rep(j, V){
+            if(i==0){
+                dp[i][j] = INF;
             }
+
+            if(j-v[i]>=0){
+                dp[i+1][j] = min(dp[i][j], dp[i][j-v[i]] + w[i]);
+            }else{
+                dp[i+1][j] = min(dp[i][j], w[i]);
+            }
+            // cout << dp[i][j] << " ";
+        }
+        // cout << endl;
+    }
+    int MAX = 0;
+    for(int i=V-1;i>=0;i--){
+        if(dp[N][i]<=W){
+            MAX = i;
+            // printf("%d\n", dp[N][i]);
+            break;
         }
     }
-
-    printf("%lld\n", dp[N-1][W]);
+    printf("%d\n", MAX+1);
     return 0;
 }
