@@ -6,8 +6,8 @@ typedef pair<int, int> P;
 #define MOD 1000000007
 
 int main(){
-    int n;
-    cin >> n;
-    printf("%d\n", n);
+    int N;
+    cin >> N;
+    printf("%d\n", N);
     return 0;
 }
