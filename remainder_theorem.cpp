@@ -1,13 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-typedef pair<int, int> P;
 #define rep(i,n) for(int i=0;i<n;i++)
-#define MOD 1000000007
 
 int main(){
-    int N;
-    cin >> N;
-    printf("%d\n", N);
+    ll x = 32134; 
+    while(true){
+        x += 1584891;
+        if(x%3438478==193127) break;
+    }
+    cout << x << endl;
     return 0;
 }
