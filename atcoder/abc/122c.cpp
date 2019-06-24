@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> P;
+#define rep(i,n) for(int i=0;i<n;i++)
+#define MOD 1000000007
+
+int main(){
+    int N, Q;
+    cin >> N >> Q;
+    string S;
+    cin >> S;
+    vector<int> idx;
+    rep(i, N-1){
+        if(S.substr(i, 2)=="AC"){
+
+            idx.emplace_back(i);
+        }
+    }
+    rep(q, Q){
+        int l, r;
+        cin >> l >> r;
+        cout << lower_bound(idx.begin(), idx.end(), r-1) - lower_bound(idx.begin(), idx.end(), l-1) << endl;
+    }
+// // 
+//     printf("%d\n", N);
+    return 0;
+}
