@@ -8,24 +8,18 @@ typedef pair<int, int> P;
 int main(){
     int L, R;
     cin >> L >> R;
-    int l = L%673;
-    int r = R%673;
+    int l = L%2019;
+    int r = R%2019;
 
-    int ans = min(((L%2019)*((L+1)%2019))%2019, ((R%2019)*(R-1)%2019)%2019);
-    if(ans<0) ans += 2019;
-    
-    if(R-L<=673){
-        if(R-L+1>=3){
-            if(l<r){
-                cout << ans << endl;
-            }else{
-                cout << 0 << endl;
-            }
-        }else{
-            cout << ans << endl;
-        }
-    }else{
+    if(R-L+1>=2019){
         cout << 0 << endl;
+    }else{
+        int MIN = 2019;
+        for(int i=L;i<R;i++){
+            for(int j=i+1;j<=R;j++){
+                MIN = min(MIN, ((i%2019)*(j%2019))%2019);
+            }
+        }
+        cout << MIN << endl;
     }
-    return 0;
 }
