@@ -1,5 +1,5 @@
 .DS_Store
-atcoder/.vscode/
-.vscode/
-codeforces/a.out
+**/.vscode
 **/a.out
+**/*.dSYM
+**/?
