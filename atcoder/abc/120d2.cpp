@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define rep(i,n) for(int i=0;i<n;i++)
-#define MAX_N 10000
+typedef pair<int, int> P;
+#define rep(i,n) for(int i=0;i<n;++i)
+#define MOD 1000000007
 
+#define MAX_N 100005
 
 struct UnionFind{
     ll par[MAX_N]; // 親
@@ -53,7 +55,31 @@ struct UnionFind{
     }
 };
 
+
 int main(){
-    UnionFind tree();
+    UnionFind uf;
+    int n, m;
+    cin >> n >> m;
+    ll a[m], b[m];
+    rep(i, m){
+        cin >> a[i] >> b[i];
+        --a[i];
+        --b[i];
+    }
+
+    uf.init(n);
+    ll ans[m];
+    ans[m-1] = (ll) n*(n-1)/2;
+    for(int i=m-2;i>=0;i--){
+        if(uf.issame(a[i+1], b[i+1])){
+            ans[i] = ans[i+1];
+        }else{
+            ans[i] = ans[i+1] - uf.size(a[i+1]) * uf.size(b[i+1]);
+            uf.unite(a[i+1], b[i+1]);
+        }
+    }
+    rep(i, m){
+        cout << ans[i] << endl;
+    }
     return 0;
 }
