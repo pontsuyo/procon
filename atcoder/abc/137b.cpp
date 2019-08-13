@@ -6,9 +6,13 @@ typedef pair<int, int> P;
 #define MOD (int) 1e9+7
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int k, x;
+    cin >> k >> x;
+    for (int i = x-k+1; i <= x+k-1; i++)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
     // printf("%d\n", N);
     return 0;
 }
