@@ -9,7 +9,16 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
+    int a[n];
+    rep(i, n){
+        cin >> a[i];
+    }
+    double s = 0;
+    rep(i, n){
+        s += (double)1 /a[i];
+    }
+
+    // cout << n << endl;
+    printf("%.20lf\n", 1/s);
     return 0;
 }

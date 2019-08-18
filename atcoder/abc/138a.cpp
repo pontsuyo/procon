@@ -7,9 +7,15 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int a;
+    string s;
+    cin >> a >> s;
+    if(a>=3200){
+        cout << s << endl;
+    }else{
+        cout << "red" << endl;
+    }
+    
     // printf("%d\n", N);
     return 0;
 }
