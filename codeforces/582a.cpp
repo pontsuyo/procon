@@ -9,7 +9,17 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    int a;
+    int ev=0, od=0;
+    rep(i, n){
+        cin >> a;
+        if(a%2==0){
+            ev++;
+        }else{
+            od++;
+        }
+    }
+    cout << min(ev, od) << endl;
     // printf("%d\n", N);
     return 0;
 }
