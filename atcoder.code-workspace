@@ -33,7 +33,8 @@
 			"random": "cpp",
 			"iostream": "cpp",
 			"string": "cpp",
-			"string_view": "cpp"
+			"string_view": "cpp",
+			"cmath": "cpp"
 		}
 	}
 }
