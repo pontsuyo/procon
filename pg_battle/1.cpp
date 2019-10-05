@@ -7,9 +7,13 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int w, k, d;
+    cin >> w >> k >> d;
+    if(k<=d && w-k<=d){
+        cout << "Yes" << endl;
+        return 0;
+    }
+    cout << "No" << endl;
     // printf("%d\n", N);
-    return 0;
+   return 0;
 }

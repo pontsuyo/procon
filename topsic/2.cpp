@@ -7,9 +7,9 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int x;
+    cin >> x;
+    cout << x/3 + x%3 << endl;
     // printf("%d\n", N);
     return 0;
 }

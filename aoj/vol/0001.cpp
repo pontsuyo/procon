@@ -7,9 +7,16 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int a[10];
+    rep(i, 10){
+        cin >> a[i];
+    }
+
+    sort(a, a+10, greater<>());
+
+    rep(i, 3){
+        cout << a[i] << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }

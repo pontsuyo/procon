@@ -7,9 +7,14 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    string ss[3] = {"Sunny", "Cloudy", "Rainy"};
+    string s;
+    cin >> s;
+    rep(i, 3){
+        if(s==ss[i]){
+            cout << ss[(i+1)%3] << endl;
+        }
+    }
     // printf("%d\n", N);
     return 0;
 }

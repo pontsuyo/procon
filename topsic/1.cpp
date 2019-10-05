@@ -7,9 +7,15 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int MAX = a*b*c;
+    MAX = max(MAX, a*b+c);
+    MAX = max(MAX, a+b*c);
+    MAX = max(MAX, a+b+c);
+
+    cout << MAX << endl;
     // printf("%d\n", N);
     return 0;
 }

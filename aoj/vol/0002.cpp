@@ -7,9 +7,16 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
+    int a, b;
+    while(cin >> a >> b){
+        int s= a+b, cnt = 0;
+        while(s>0){
+            s /= 10;
+            cnt++;
+        }
+        cout << cnt << endl;
+        // printf("%d\n", N);
+    
+    }
     return 0;
 }

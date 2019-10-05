@@ -7,9 +7,14 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int a[5];
+    rep(i, 5){
+        a[i] = i;
+    }
+    for (int i = 500; i < 1000; i++) {
+        cout << a[i] << endl;
+    }
+    // cout << a << endl;
     // printf("%d\n", N);
     return 0;
 }

@@ -9,6 +9,12 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
+    int a[n];
+    rep(i, n){
+        cin >> a[i];
+    }
+
+    
     cout << n << endl;
     // printf("%d\n", N);
     return 0;
