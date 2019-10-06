@@ -18,16 +18,12 @@ int main(){
     for (int i = n; i >=1; i--){
         int ma = n/i * i;
         int s = 0;
-        for(int j=ma; j >= i; j-=i){
-            s += b[j];
-            if(j==i){
-                if(s%2==a[i-1]){
-                    b[i-1] = 0;
-                }else{
-                    b[i-1] = 1;
-                    m++;
-                }
-            }
+        for (int j = ma; j > i; j-=i){
+            s += b[j-1];
+        }
+        if(s%2!=a[i-1]){
+            b[i-1] = 1;
+            m++;
         }
     }
 

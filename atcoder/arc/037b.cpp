@@ -12,21 +12,14 @@ bool fin[105]; // 探索した: true，してない: false．
 int cnt = 0;
 bool ans;
 
-bool dfs(int s){
+bool dfs(int s, int p){
+    if(fin[s]) return false;
     fin[s] = true;
     for (int u : edge[s]) {
-        if(fin[u]){
-            return false;
-        } else{
-            bool tmp = dfs(u);
-            ans |= tmp;
-        }
+        if(u==p) continue;
+        bool tmp = dfs(u, s);
+        ans &= tmp;
     }
-    // if(ans){
-    //     return true;
-    // }else{
-    //     return false;
-    // }
     return true;
 }
 
@@ -38,6 +31,7 @@ int main(){
         u--;
         v--;
         edge[u].emplace_back(v);
+        edge[v].emplace_back(u);
     }
     rep(i, n){
         fin[i] = false;
@@ -45,7 +39,7 @@ int main(){
     rep(i, n){
         if(!fin[i]){
             ans = true;
-            dfs(i);
+            dfs(i, -1);
             if(ans) cnt++;
         }
     }
