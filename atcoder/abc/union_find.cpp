@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 #define rep(i,n) for(int i=0;i<n;i++)
-#define MAX_N 10000
+#define MAX_N 100000
 
 
 struct UnionFind{

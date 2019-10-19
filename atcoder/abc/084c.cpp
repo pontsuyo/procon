@@ -8,27 +8,27 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    int c[n-1], s[n-1], f[n-1];
+    int c[n], s[n], f[n];
     rep(i, n-1){
         cin >> c[i] >> s[i] >> f[i];
     }
+    c[n-1] = 0;
+    s[n-1] = 0;
+    f[n-1] = 1;
     
-    int ans[n] = {};
-    for (int i = 0; i < n-1; i++){
-        for (int j = 0; j <= i; j++){
-            if (ans[j] < s[i]){
-                ans[j] = s[i] + c[i];
-            }else{
-                int tmp = ans[j]/f[i];
-                ans[j] = f[i] * tmp + c[i];
-            }
+    rep(i, n-1){
+        int ss = s[i];
+        for (int j = i; j < n-1; j++) {
+            int t = ss + c[j];
+            int tt = t - t%f[j+1] + f[j+1];
+            if(t%f[j+1]==0) tt -= f[j+1];
+
+            // printf("%d %d\n", ss, tt);
+
+            ss = max(tt, s[j+1]);
         }
+        cout << ss << endl;
     }
-    
-    for (int i = 0; i < n; i++){
-        cout << ans[i] << endl;
-    }
-    
-    // printf("%d\n", N);
+    cout << 0 << endl;
     return 0;
 }

@@ -6,7 +6,7 @@ typedef long long ll;
 int main(){
     ll n, k;
     cin >> n >> k;
-    vector <ll> a;
+    ll a;
     ll tmp;
     rep(i, n){
         cin >> tmp;
