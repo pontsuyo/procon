@@ -7,6 +7,7 @@ typedef pair<int, int> P;
 #define chmax(x, y) x = max(x, y)
 #define MOD (int) (1e9+7)
 #define INF (int) 2e9
+#define LLINF (ll) 2e18
 
 int main(){
     int n;
