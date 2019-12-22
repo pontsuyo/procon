@@ -10,14 +10,17 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 vector<int> edges[100005];
-int v[100005];
+vector<int> vcol[100005];
 
 map<P, int> m;
 
 void bfs(int s, int pcol){
     queue<P> q;
     rep(i, edges[s].size()){
-        q.push(P(s, edges[s][i]));
+        int tmp = edges[s][i];
+        if(vcol[tmp].empty()){
+            q.push(P(s, tmp));
+        }
     }
     while(!q.empty()){
         P p = q.front(); q.pop();
