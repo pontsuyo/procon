@@ -23,23 +23,7 @@ int main(){
     int ans = INF;
     int col[n];
     rep(iii, 1<<n){
-        int ii = iii;
-        rep(j, n){
-            col[j] = ii%2;
-            ii /= 2;
-        }
-
-        int tt = 0;
-        bool ng = false;
-        rep(i, n){
-            if(tt==1 && col[i]==0){
-                ng = true;
-                break;
-            }
-            tt += col[i];
-            tt %= 2;
-        }
-        if(tt==1 || ng) continue;
+        rep(j, n) col[j] = (iii>>j) & 1;
 
         vector<P> podd, peven;
         rep(i, n){
@@ -57,65 +41,37 @@ int main(){
                 }
             }
         }
+        if(peven.size()!= n/2) continue;
         
         sort(podd.begin(), podd.end());
         sort(peven.begin(), peven.end());
 
-        // printf("%d p odd\n", iii);
-        // for (auto a : podd){
-        //     printf("%d\n", a.first);
-        // }
-        // printf("%d p even\n", iii);
-        // for (auto a : peven){
-        //     printf("%d\n", a.first);
-        // }
-        
-
-
-        vector<int> ids;
-        rep(i, n-1){
-            int ii = i/2;
-            int ij = i%2; 
-            if(ij==0){
-                if(podd[ii].first > peven[ii].first) ng = true;
+        vector<P> p;
+        int ido = 0, ide = 0;
+        rep(i, n){
+            if(i%2==0){
+                p.push_back(podd[ido]);
+                ido++;
             }else{
-                if(peven[ii].first > podd[ii+1].first) ng = true;
+                p.push_back(peven[ide]);
+                ide++;
             }
         }
-        if(ng) continue;
 
-        // printf("%d p odd\n", iii);
-        // for (auto a : podd){
-        //     printf("%d\n", a.first);
-        // }
-        // printf("%d p even\n", iii);
-        // for (auto a : peven){
-        //     printf("%d\n", a.first);
-        // }
-        // printf("%d %d\n", podd.size(), peven.size());
-
-
-        rep(i, peven.size()){
-            ids.emplace_back(podd[i].second);
-            ids.emplace_back(peven[i].second);
+        bool ok = true;
+        rep(i, n-1){
+            if(p[i].first > p[i+1].first) ok = false;
         }
-        if(n%2==1){
-            ids.emplace_back(podd[(n+1)/2-1].second);
-        }
-
-        // rep(i, n){
-        //     printf("%d\n", ids[i]);
-        // }
+        if(!ok) continue;
 
         int cnt = 0;
         rep(i, n){
             rep(j, n){
                 if(i<j){
-                    if(ids[i] > ids[j]) cnt++;
+                    if(p[i].second > p[j].second) cnt++;
                 }
             }
         }
-        // printf("a %d\n", cnt);
         chmin(ans, cnt);
     }
 
@@ -124,7 +80,5 @@ int main(){
     }else{
         cout << ans << endl;
     }
-
-    // printf("%d\n", N);
     return 0;
 }
