@@ -10,9 +10,19 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int h, n;
+    cin >> h >> n;
+	int sum = 0;
+	rep(i, n){
+		int a;
+		cin >> a;
+		sum += a;
+	}
+	if(sum >= h){
+    	cout << "Yes" << endl;
+	}else{
+		cout << "No" << endl;
+	}
     // printf("%d\n", N);
     return 0;
 }
