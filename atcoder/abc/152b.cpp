@@ -9,28 +9,18 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 #define LLINF (ll) 2e18
 
-// 逆元のmod MOD
-ll rev_mod(ll num){
-	ll pow_num = MOD - 2;
-	ll mod_num = MOD;
-	ll pow_cur = num;
-	ll ret = 1;
-	while(pow_num > 0){
-		if(pow_num % 2 == 1){
-			ret *= pow_cur;
-			ret %= mod_num;
-		}
-		pow_cur *= pow_cur;
-		pow_cur %= mod_num;
-		pow_num /= 2;
-	}
-	return ret;
-}
-
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int a, b;
+    cin >> a >> b;
+    string s1="", s2="";
+    rep(i, b){
+        s1 += (char)('0'+a);
+    }
+    rep(i, a){
+        s2 += (char)('0'+b);
+    }
+    
+    cout << min(s1, s2) << endl;
     // printf("%d\n", N);
     return 0;
 }
