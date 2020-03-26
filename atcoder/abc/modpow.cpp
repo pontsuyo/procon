@@ -9,10 +9,12 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 #define LLINF (ll) 2e18
 
-int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
-    return 0;
+ll modpow(ll a, ll n) {
+    ll res = 1;
+    while (n > 0) {
+        if (n & 1) res = res * a % MOD;
+        a = a * a % MOD;
+        n >>= 1;
+    }
+    return res;
 }

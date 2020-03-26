@@ -12,7 +12,23 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    rep(i, n){
+        string s;
+        cin >> s;
+        int cnt = 1;
+        rep(i, s.size()){
+            if(s[i] >= 'A' && s[i] <= 'Z'){
+                cnt++;
+            }
+        }
+
+        if(cnt<=7){
+            cout << "YES" << endl;
+            
+        } else{
+            cout << "NO" << endl;
+        }
+    }
     // printf("%d\n", N);
     return 0;
 }

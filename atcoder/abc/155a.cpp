@@ -10,9 +10,17 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    map<int, int>m;
+    rep(i, 3){
+        int a;
+        cin >> a;
+        m[a]++;
+    }
+    if(m.size()==2){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }

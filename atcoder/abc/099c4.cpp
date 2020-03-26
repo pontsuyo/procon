@@ -12,7 +12,24 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+
+    int ans = INF;
+    for (int i = 0; i <= n; i++) {
+        int cnt = 0;
+        int t = i;
+        while(t>0){
+            cnt += t %6;
+            t /= 6;
+        }
+        t = n-i;
+        while(t>0){
+            cnt += t%9;
+            t /= 9;
+        }
+        chmin(ans, cnt);
+    }
+    
+    cout << ans << endl;
     // printf("%d\n", N);
     return 0;
 }

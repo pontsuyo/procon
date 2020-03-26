@@ -9,10 +9,28 @@ typedef pair<int, int> P;
 #define INF (int) 2e9
 #define LLINF (ll) 2e18
 
+int a[1000005];
+
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    n--;
+
+    a[0]=0;
+    a[1]=0;
+    a[2]=1;
+    if(n<=2){
+        cout << a[n] << endl;
+        return 0;
+    }
+
+    for (int i = 3; i <= n; i++)
+    {
+        a[i] = a[i-1]+a[i-2] + a[i-3];
+        a[i] %= 10007;
+    }
+    
+    cout << a[n] << endl;
     // printf("%d\n", N);
     return 0;
 }

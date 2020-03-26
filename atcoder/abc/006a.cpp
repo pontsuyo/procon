@@ -12,7 +12,11 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    if(n%3==0){
+        cout << "YES" << endl;
+    }else{
+        cout << "NO" << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }

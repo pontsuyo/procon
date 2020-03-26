@@ -12,7 +12,23 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
+    ll a[n+1];
+    a[0] = 0;
+    rep(i, n){
+        ll tmp; cin >> tmp;
+        a[i+1] = a[i] + tmp;
+    }
+    map<ll, ll> m;
+
+    rep(i, n+1){
+        m[a[i]]++;
+    }
+
+    ll ans = 0;
+    for (auto mm : m){
+        ans += mm.second * (mm.second-1)/2;
+    }
+
+    cout << ans << endl;
     return 0;
 }

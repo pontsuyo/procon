@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "/Users/uchida/progra/procon/atcoder/abc"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"bitset": "cpp",
+			"iostream": "cpp",
+			"ostream": "cpp",
+			"cmath": "cpp",
+			"random": "cpp"
+		}
+	}
+}

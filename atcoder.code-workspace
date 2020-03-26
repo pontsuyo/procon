@@ -34,7 +34,9 @@
 			"iostream": "cpp",
 			"string": "cpp",
 			"string_view": "cpp",
-			"cmath": "cpp"
+			"cmath": "cpp",
+			"chrono": "cpp",
+			"*.tcc": "cpp"
 		}
 	}
 }

@@ -10,9 +10,21 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    ll n, a, b;
+    cin >> n >> a >> b;
+
+    if((a-b)%2==0){
+        cout << abs(a-b)/2 << endl;
+        return 0;
+    }
+    a--;
+    b--;
+    if(max(a, b)<max(n-a, n-b)){
+        cout << max(a, b) << endl;
+    }else{
+        cout << max(n-a, n-b) << endl;
+    }
+
     // printf("%d\n", N);
     return 0;
 }

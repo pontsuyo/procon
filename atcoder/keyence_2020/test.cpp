@@ -12,7 +12,7 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    cout << (n & 1<<2) << endl;
     // printf("%d\n", N);
     return 0;
 }

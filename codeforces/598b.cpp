@@ -20,32 +20,20 @@ int main(){
             cin >> a[i];
         }
 
-        bool used[n];
-        rep(i, n-1){
-            used[i] = true;
-        }
-        
+        int id = 0;        
         for (int i = 0; i < n-1; i++)
         {
-            // printf("%d %d\n", i, a[i]);
-
-            if(a[i] == (i+1)){
-                used[i] = false;
-                continue;
-            }
-
-            int id;
-            rep(j, n){
+            chmax(id, i);
+            for (int j = id; j < n; j++)
+            {
                 if(a[j]==i+1){
+                    for (int k = j; k > id; k--)
+                    {
+                        swap(a[k], a[k-1]);
+                    }
                     id = j;
                     break;
                 }
-            }
-            
-            for (int j = id; used[j-1] && j>0; j--)
-            {
-                swap(a[j], a[j-1]);
-                used[j-1] = false;
             }
         }
 
