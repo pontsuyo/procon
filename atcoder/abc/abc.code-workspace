@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/uchida/progra/procon/atcoder/gcj2020"
 		}
 	],
 	"settings": {
@@ -22,7 +25,11 @@
 			"string_view": "cpp",
 			"initializer_list": "cpp",
 			"regex": "cpp",
-			"valarray": "cpp"
+			"valarray": "cpp",
+			"algorithm": "cpp",
+			"chrono": "cpp",
+			"limits": "cpp",
+			"*.tcc": "cpp"
 		}
 	}
 }
