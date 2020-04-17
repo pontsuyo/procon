@@ -36,6 +36,11 @@ int main(){
 
     }
 
+    rep(i, m) {
+        rep(j, 1<<n) cout << dp[j][i] << " ";
+        cout << endl;
+    }
+
     ll ans = dp[(1<<n) -1][m];
     if(ans!=LLINF){
         cout << ans << endl;
