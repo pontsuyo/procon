@@ -17,7 +17,33 @@ int main(){
     int a[n];
     rep(i, n) cin >> a[i];
 
-    cout << n << endl;
+
+    int c[h][w];
+
+    int tmp = a[0], num = 1;
+    rep(i, h * w){
+        int hi = i/w;
+
+        int wi;
+        if(hi%2==0){
+            wi = i%w;
+        }else{
+            wi = (w-1)-i%w;
+        }
+        c[hi][wi] = num;
+        tmp--;
+        if(tmp==0){
+            tmp += a[num];
+            num++;
+        }
+    }
+
+    rep(i, h){
+        rep(j, w){
+            cout << c[i][j] << " ";
+        }
+        cout << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }

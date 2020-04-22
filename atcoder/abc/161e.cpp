@@ -10,9 +10,38 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int n, k, c;
+    string s;
+    cin >> n >> k >> c >> s;
+
+    int i = 0;
+    vector<int> l, r;
+    while(i<n){
+        if(s[i]=='o'){
+            l.emplace_back(i);
+            if(l.size()==k) break;
+            i += c+1;
+        }else{
+            i++;
+        }
+    }
+
+    i = n-1;
+    while(i>=0){
+        if(s[i]=='o'){
+            r.emplace_back(i);
+            if(r.size()==k) break;
+            i -= c+1;
+        }else{
+            i--;
+        }
+    }
+
+    sort(r.begin(), r.end());
+
+    rep(i, k){
+        if(l[i]==r[i]) cout << l[i]+1 << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }
