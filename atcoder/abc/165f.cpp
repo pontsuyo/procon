@@ -9,7 +9,7 @@ typedef pair<int, int> P;
 #define all(v) v.begin(), v.end()
 #define MOD (int) (1e9+7)
 #define INF (int) 1e9
-#define LLINF (ll) 1e18
+#define LLINF (ll) 2e18
 
 int main(){
     int n;
