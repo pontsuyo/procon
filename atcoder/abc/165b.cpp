@@ -12,9 +12,16 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    ll x;
+    cin >> x;
+    ll tmp = 100;
+    int cnt = 0;
+    while(x > tmp){
+        cnt++;
+        tmp = (ll)(1.01 * tmp);
+    }
+    
+    cout << cnt << endl;
     // printf("%d\n", N);
     return 0;
 }

@@ -12,9 +12,15 @@ typedef pair<int, int> P;
 #define LLINF (ll) 2e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    ll a, b, n;
+    cin >> a >> b >> n;
+
+    ll ans = 0;
+    if(n >= b-1){
+        cout << (b-1)*a/b << endl;    
+    }else{
+        cout << n*a/b << endl;
+    }
     // printf("%d\n", N);
     return 0;
 }
