@@ -12,9 +12,26 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
+    ll p = 1;
     int n;
     cin >> n;
-    cout << n << endl;
+    ll a[n];
+    rep(i, n){
+        cin >> a[i];
+        if(a[i]==0){
+            cout << 0 << endl;
+            return 0;
+        }
+    }
+
+    rep(i, n){
+        if(a[i]!=0 && p > (long double)1e18 / a[i]){
+            cout << -1 << endl;
+            return 0;
+        }
+        p *= a[i];
+    }
+    cout << p << endl;
     // printf("%d\n", N);
     return 0;
 }

@@ -4,7 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "../../gcj2020"
+			"path": "../dp_matome"
+		},
+		{
+			"path": "../past03"
 		}
 	],
 	"settings": {

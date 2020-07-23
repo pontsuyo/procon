@@ -11,9 +11,29 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
+#define MAX_V 100005
+
+int d[MAX_V][MAX_V];
+int V;
+
+void warshall_floyd() {
+    for(int k=0; k<V; k++)
+        for(int i=0; i<V; i++)
+            for(int j=0; j<V; j++){
+                d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+            }
+}
+
+
 int main(){
-    int n;
-    cin >> n;
+    int m;
+    cin >> V >> m;
+
+    rep(i, )
+    rep(i, m){
+        int u, v;
+        cin >> u >> v;
+    }
     cout << n << endl;
     // printf("%d\n", N);
     return 0;

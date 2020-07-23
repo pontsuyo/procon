@@ -14,7 +14,16 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    map<int, int> m;
+    rep(i, n){
+        int a;
+        cin >> a;
+        while(a%2==0){
+            a /= 2;
+        }
+        m[a]=1;
+    }
+    cout << m.size() << endl;
     // printf("%d\n", N);
     return 0;
 }

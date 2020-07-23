@@ -11,10 +11,26 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
+ll dp[100005];
+
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int n, w;
+    cin >> n >> w;
+
+    rep(j, n){
+        int wi, vi;
+        cin >> wi >> vi;
+        for (int i = w; i >= wi; i--){
+            dp[i] = max(dp[i], dp[i-wi] + vi);
+        }
+
+        // repr(i, 0,w){
+        //     cout << dp[i] << " ";
+        // }
+        // cout << endl;
+    }
+
+    cout << dp[w] << endl;
     // printf("%d\n", N);
     return 0;
 }

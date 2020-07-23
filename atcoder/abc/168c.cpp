@@ -12,9 +12,14 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
+    double a, b, h, m;
+    cin >>  a >> b >> h >> m;
+
+    double t1, t2;
+    t1 = h * 30 + m/60 * 30;
+    t2 = m * 6;
+
+    // cout << sqrt(a*a + b*b -2 * a * b * cos(abs(t2-t1)/360 *2* M_PI)) << endl;
+    printf("%10.20lf\n", sqrt(a*a + b*b -2 * a * b * cos(abs(t2-t1)/360 *2* M_PI)));
     return 0;
 }

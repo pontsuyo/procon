@@ -11,10 +11,25 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
+int cnt[1000005];
+
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    rep(i, n){
+        int a, b;
+        cin >> a >> b ;
+        cnt[a]++;
+        cnt[++b]--;
+    }
+
+    int ans = 0;
+    int tmp = 0;
+    rep(i, 1000002){
+        tmp += cnt[i];
+        chmax(ans, tmp);
+    }
+    cout << ans << endl;
     // printf("%d\n", N);
     return 0;
 }

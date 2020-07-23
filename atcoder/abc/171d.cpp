@@ -14,7 +14,32 @@ typedef pair<int, int> P;
 int main(){
     int n;
     cin >> n;
-    cout << n << endl;
+    int a[n];
+    rep(i, n) cin >> a[i];
+    int q;
+    cin >> q;
+    int b[q], c[q];
+    rep(i, q) cin >> b[i] >> c[i];
+
+    ll s = 0;
+
+    map<int, int> m;
+    rep(i ,n){
+        m[a[i]]++;
+    }
+    for (auto &&i : m){
+        s += (ll)i.first * i.second;
+    }
+    
+    rep(i, q){
+        int tmp = m[b[i]];
+        m[c[i]] += m[b[i]];
+        m[b[i]] = 0;
+        s += (ll) (c[i]-b[i]) * tmp;
+        cout << s << endl;
+    }
+
+    
     // printf("%d\n", N);
     return 0;
 }

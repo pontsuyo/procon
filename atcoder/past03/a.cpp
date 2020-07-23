@@ -12,9 +12,22 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    string s, t;
+    cin >> s >> t;
+    if(s==t){
+        cout << "same" << endl;
+    }else{
+        locale l = locale::classic();
+        bool ok = true;
+        rep(i, 3){
+            if(tolower(s[i]) != tolower(t[i])) ok = false;
+        }
+        if(ok){
+            cout << "case-insensitive" << endl;
+        }else{
+            cout << "different" << endl;
+        }
+    }
     // printf("%d\n", N);
     return 0;
 }

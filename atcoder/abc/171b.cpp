@@ -12,9 +12,14 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int n, k;
+    cin >> n >> k;
+    int p[n];
+    rep(i, n) cin >> p[i];
+    sort(p, p+n);
+    int ans = 0;
+    rep(i, k) ans += p[i];
+    cout << ans << endl;
     // printf("%d\n", N);
     return 0;
 }
