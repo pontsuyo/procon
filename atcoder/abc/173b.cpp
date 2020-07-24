@@ -12,11 +12,16 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    ll a;
-    double b;
-    cin >> a >> b;
-    ll bb = (ll)(b*100+0.1);
-    cout << a * bb/100 << endl;
+    int n;
+    cin >> n;
+    map<string, int> m;
+    rep(i, n){
+        string s;
+        cin >> s;
+        m[s]++;
+    }
+
+    printf("AC x %d\nWA x %d\nTLE x %d\nRE x %d\n", m["AC"], m["WA"], m["TLE"], m["RE"]);
     // printf("%d\n", N);
     return 0;
 }
