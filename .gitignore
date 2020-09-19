@@ -4,6 +4,7 @@
 **/*.dSYM
 **/?
 .idea/
+**/.code-workspace
 yahoo/
 
 # 他人から拝借しているもの
