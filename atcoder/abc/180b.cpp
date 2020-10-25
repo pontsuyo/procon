@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -11,20 +12,21 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
-int a[1000005];
-
 int main(){
-    int k;
-    cin >> k;
+    int n;
+    cin >> n;
+    ll x[n];
+    ll ma=0, che=0;
+    ll eutmp=0;
+    rep(i, n){
+        cin >> x[i];
+        ma += abs(x[i]);
+        eutmp += x[i]*x[i];
+        chmax(che, abs(x[i]));
 
-    repr(i, 1, k){
-        a[i] = (a[i-1]*10+7)%k;
-        if(a[i]==0){
-            cout << i << endl;
-            return 0;
-        }
     }
-    cout << -1 << endl;
-    // printf("%d\n", N);
+
+    // cout << n << endl;
+    printf("%lld\n%.20lf\n%d\n", ma, sqrt(eutmp), che);
     return 0;
 }

@@ -11,20 +11,22 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
-int a[1000005];
-
 int main(){
-    int k;
-    cin >> k;
+    ll n;
+    cin >> n;
 
-    repr(i, 1, k){
-        a[i] = (a[i-1]*10+7)%k;
-        if(a[i]==0){
-            cout << i << endl;
-            return 0;
+    vector<ll> v;
+    for (ll i = 1; i * i <= n; i++)
+    {
+        if(n%i==0){
+            v.emplace_back(i);
+            if(n!=i*i) v.emplace_back(n/i);
         }
     }
-    cout << -1 << endl;
-    // printf("%d\n", N);
+    
+    sort(v.begin(), v.end());
+
+    rep(i,v.size()) cout << v[i] << endl;
+
     return 0;
 }

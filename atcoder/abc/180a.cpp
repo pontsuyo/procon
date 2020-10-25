@@ -11,20 +11,10 @@ typedef pair<int, int> P;
 #define INF (int) 1e9
 #define LLINF (ll) 1e18
 
-int a[1000005];
-
 int main(){
-    int k;
-    cin >> k;
-
-    repr(i, 1, k){
-        a[i] = (a[i-1]*10+7)%k;
-        if(a[i]==0){
-            cout << i << endl;
-            return 0;
-        }
-    }
-    cout << -1 << endl;
+    int n, a, b;
+    cin >> n >> a >> b;
+    cout << n-a+b << endl;
     // printf("%d\n", N);
     return 0;
 }
