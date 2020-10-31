@@ -17,9 +17,56 @@ char maze[1005][1005];
 int h, w;
 int ch, cw, dh, dw;
 
+void bfs(){
+    int di[4] = {0, 1, 0, -1};
+    int dj[4] = {-1, 0, 1, 0};
+    
+    queue<P> q;
+    vector<P> pv[1000005];
+    q.push(P(ch, cw));
+    int dt = 0;
+
+    while(q.size()>0){
+        while(q.size()>0){
+            P p = q.front(); q.pop();
+            pv[dt].emplace_back(p);
+            for (int i = 0; i < 4; i++){
+                int ni = p.first + di[i];
+                int nj = p.second + dj[i];
+                if(ni>=0 && ni < h && nj>=0 && nj<w && maze[ni][nj]=='.' && d[ni][nj]==INF){
+                    q.push(P(ni, nj));
+                    pv[dt].emplace_back(P(ni, nj));
+                    d[ni][nj] = dt;
+                }
+            }
+        }
+
+        // printf("%d ", dt);
+        for (auto &&p : pv[dt]){
+            rep(ii, 5) rep(jj, 5){
+                int ni = p.first + ii-2;
+                int nj = p.second + jj-2;
+
+                if(ni>=0 && ni < h && nj>=0 && nj<w && maze[ni][nj]=='.' && d[ni][nj]==INF){
+                    q.push(P(ni, nj));
+                    pv[dt+1].emplace_back(P(ni, nj));
+                    d[ni][nj] = dt+1;
+                }
+            }
+        }
+        dt++;
+        // printf("%d ", dt);
+    }
+}
+
+
 int main(){
     cin >> h >> w;
     cin >> ch >> cw >> dh >> dw;
+    --ch;
+    --cw;
+    --dh;
+    --dw;
     rep(i, h) {
         string s;
         cin >> s;
@@ -31,35 +78,23 @@ int main(){
     rep(hi, h) rep(wi, w){
         d[hi][wi] = INF;
     }
-
+    
     d[ch][cw] = 0;
 
+    bfs();
 
-    
 
-    cout << n << endl;
-    // printf("%d\n", N);
-    return 0;
-}
+    // rep(hi, h){
+    //     rep(wi, w){
+    //         printf("%d ", d[hi][wi]);
+    //     }
+    //     printf("\n");
+    // }
 
-void bfs(){
-    queue <P> que;
-
-    que.push(P(ch, cw));
-    d[ch][cw]=0;
-
-    while (que.size()){
-        P p=que.front(); que.pop();
-        if(p.first == dh && p.second== dw) break;
-
-        int di[4] = {1, 0, -1, 0}, dj[4] = {0, 1, 0, -1};
-        for(int i=0; i<4; i++){
-            int ni = p.first + di[i], nj = p.second + dj[i];
-
-            if(0 <= ni && ni < h && 0 <= nj && nj < w && maze[ni][nj] == '.' && d[ni][nj]==INF){
-                que.push(P(ni, nj));
-                chmin(d[p.first][p.second], d[ni][nj]);
-            }
-        }
+    if(d[dh][dw]==INF){
+        cout << -1 << endl;
+    }else{
+        cout << d[dh][dw] << endl;
     }
+    return 0;
 }
