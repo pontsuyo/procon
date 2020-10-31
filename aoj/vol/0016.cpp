@@ -12,9 +12,18 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
-    return 0;
+    int d, a;
+    double x=0.0, y=0.0;
+    int theta=90;
+    while(true){
+        scanf("%d,%d", &d, &a);
+        if(d==0 && a==0){
+            printf("%.0lf\n%.0lf", x, y);
+            return 0;
+        }
+
+        x += cos((double) theta * M_PI /180) * d;
+        y += sin((double) theta * M_PI /180) * d;
+        theta -= a;
+    }    
 }

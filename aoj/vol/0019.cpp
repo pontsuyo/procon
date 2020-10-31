@@ -12,7 +12,6 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 
-
 int main(){
     ll n;
     cin >> n;

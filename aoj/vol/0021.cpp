@@ -12,9 +12,19 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
-    // printf("%d\n", N);
+    int t;
+    cin >> t;
+    rep(ti, t){
+        double x[4], y[4];
+        rep(i, 4) cin >> x[i] >> y[i];
+
+        double dx1 = x[1] - x[0], dx2 = x[3]-x[2];
+        double dy1 = y[1] - y[0], dy2 = y[3]-y[2];
+        if(dx1*dy2==dx2*dy1){
+            cout << "YES" << endl;
+        }else{
+            cout << "NO" << endl;
+        }
+    }
     return 0;
 }

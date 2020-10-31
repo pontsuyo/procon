@@ -14,7 +14,7 @@ typedef pair<int, int> P;
 int main(){
     int a[5];
     rep(i, 5) cin >> a[i];
-
+    
     sort(a, a+5, greater<>());
 
     rep(i, 5){
