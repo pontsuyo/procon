@@ -12,9 +12,28 @@ typedef pair<int, int> P;
 #define LLINF (ll) 1e18
 
 int main(){
-    int n;
-    cin >> n;
-    cout << n << endl;
+    int n, C;
+    cin >> n >> C;
+
+    vector<P> p;
+
+    rep(i, n){
+        int a, b, c;
+        cin >> a >> b >> c;
+        p.emplace_back(P(a, c));
+        p.emplace_back(P(b+1, -c));
+    }
+
+    sort(p.begin(), p.end());
+
+    ll ans=0, tsum = 0;
+    rep(i, p.size()-1){
+        int d = p[i+1].first - p[i].first;
+        tsum += p[i].second;
+        ans += min(tsum, (ll)C)*d;
+    }
+
+    cout << ans << endl;
     // printf("%d\n", N);
     return 0;
 }
