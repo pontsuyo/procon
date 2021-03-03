@@ -36,7 +36,7 @@ int main(){
         int ti = a[i];
         int tj = b[i];
         while(tj+1<w && t[ti][tj+1]!=2){
-            // if(t[ti][tj+1]==1) break;
+            if(t[ti][tj+1]==1) break;
             v[ti][tj+1] = 1;
             tj++;
         }
@@ -44,7 +44,7 @@ int main(){
         ti = a[i];
         tj = b[i];
         while(tj-1>=0 && t[ti][tj-1]!=2){
-            // if(t[ti][tj-1]==1) break;
+            if(t[ti][tj-1]==1) break;
             v[ti][tj-1] = 1;
             tj--;
         }
@@ -52,7 +52,7 @@ int main(){
         ti = a[i];
         tj = b[i];
         while(ti+1<h && t[ti+1][tj]!=2){
-            // if(t[ti+1][tj]==1) break;
+            if(t[ti+1][tj]==1) break;
             v[ti+1][tj] = 1;
             ti++;
         }
@@ -60,7 +60,7 @@ int main(){
         ti = a[i];
         tj = b[i];
         while(ti-1>=0 && t[ti-1][tj]!=2){
-            // if(t[ti-1][tj]==1) break;
+            if(t[ti-1][tj]==1) break;
             v[ti-1][tj] = 1;
             ti--;
         }
